@@ -1,9 +1,10 @@
+import React from "react";
 import { createContext, useContext, useState } from "react";
 import initialData from "../data/data.json";
 
 const FlashcardsContext = React.createContext();
 
-export default function FlashcardsProvider({ children }) {
+export function FlashcardsProvider({ children }) {
   const [flashcards, setFlashcards] = useState(initialData);
 
   function maskAsKnown(cardId) {
@@ -30,7 +31,7 @@ export default function FlashcardsProvider({ children }) {
 
   const value = {
     flashcards,
-    markAsKnown,
+    maskAsKnown,
     resetProgress,
     getCardStatus,
   };
