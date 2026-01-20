@@ -42,3 +42,5 @@ export function FlashcardsProvider({ children }) {
     </FlashcardsContext.Provider>
   );
 }
+
+export default FlashcardsContext;

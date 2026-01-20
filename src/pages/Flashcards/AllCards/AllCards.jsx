@@ -1,1 +1,9 @@
-export function AllCards() {}
+export function AllCards() {
+  return (
+    <section>
+      <FlashcardForm />
+      <FlashcardFilters />
+      <FlashcardsGrid />
+    </section>
+  );
+}
