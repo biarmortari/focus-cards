@@ -5,7 +5,7 @@ import initialData from "../data/data.json";
 const FlashcardsContext = React.createContext();
 
 export function FlashcardsProvider({ children }) {
-  const [flashcards, setFlashcards] = useState(initialData);
+  const [flashcards, setFlashcards] = useState(initialData.flashcards);
 
   function maskAsKnown(cardId) {
     setFlashcards((prevCards) =>

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { FlashcardsContext } from "../../contexts/FlashcardsContext";
-import Flashcard from "../Flashcard/Flashcard";
+import FlashcardsContext from "../../contexts/FlashcardsContext";
+import { Flashcard } from "../Flashcard/Flashcard";
 
-function FlashcardsGrid() {
+export function FlashcardGrid() {
   const { flashcards } = useContext(FlashcardsContext);
 
   return (
@@ -15,5 +15,3 @@ function FlashcardsGrid() {
     </section>
   );
 }
-
-export default FlashcardsGrid;
