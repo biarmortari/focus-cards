@@ -1,25 +1,26 @@
 .filters {
-  position: relative; /* Importante para o menu se posicionar em relação a este div */
+  position: relative;
   display: inline-block;
 }
 
 .filter__button_main {
+  width: 100%;
   padding: 10px 20px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 150px;
+  min-width: 200px;
 }
 
 .filter__menu {
   position: absolute;
-  top: 100%; /* Coloca logo abaixo do botão */
+  top: 100%;
   left: 0;
   background: white;
   border: 1px solid #ccc;
   border-top: none;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   display: flex;
   flex-direction: column;

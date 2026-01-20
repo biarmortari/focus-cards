@@ -1,11 +1,9 @@
 import { useContext, useState } from "react";
 import { FlashcardsContext } from "../../contexts/FlashcardsContext";
-import "./FlashcardFilter.css";
 
 export function FlashcardFilter() {
   const { categories, selectedCategory, setSelectedCategory } =
     useContext(FlashcardsContext);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (category) => {
@@ -13,13 +11,16 @@ export function FlashcardFilter() {
     setIsOpen(false);
   };
 
+  const displayLabel =
+    selectedCategory === "all" ? "All Categories" : selectedCategory;
+
   return (
     <div className="filters">
       <button
         className="filter__button_main"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {selectedCategory === "all" ? "All Categories" : selectedCategory}
+        {displayLabel}{" "}
         <span className={`arrow ${isOpen ? "open" : ""}`}>▼</span>
       </button>
 
@@ -32,15 +33,17 @@ export function FlashcardFilter() {
             All Categories
           </button>
 
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`filter__menu-item ${selectedCategory === category ? "active" : ""}`}
-              onClick={() => handleSelect(category)}
-            >
-              {category}
-            </button>
-          ))}
+          {categories
+            .filter((cat) => cat !== "all")
+            .map((category) => (
+              <button
+                key={category}
+                className={`filter__menu-item ${selectedCategory === category ? "active" : ""}`}
+                onClick={() => handleSelect(category)}
+              >
+                {category}
+              </button>
+            ))}
         </div>
       )}
     </div>

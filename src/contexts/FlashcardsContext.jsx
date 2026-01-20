@@ -5,7 +5,7 @@ export const FlashcardsContext = createContext();
 
 export function FlashcardsProvider({ children }) {
   const [flashcards, setFlashcards] = useState(initialData.flashcards);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   function markAsKnown(cardId) {
     setFlashcards((prevCards) =>
