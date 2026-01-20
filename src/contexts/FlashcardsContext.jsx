@@ -32,13 +32,23 @@ export function FlashcardsProvider({ children }) {
   }
 
   const categories = useMemo(() => {
-    return [...new Set(flashcards.map((card) => card.category))];
+    const uniqueCategories = new Set(flashcards.map((card) => card.category));
+
+    return ["all", ...uniqueCategories];
   }, [flashcards]);
+
+  const filteredFlashcards =
+    selectedCategory === "all"
+      ? flashcards
+      : flashcards.filter((card) => card.category === selectedCategory);
 
   const value = {
     flashcards,
+    setFlashcards,
     categories,
     selectedCategory,
+    setSelectedCategory,
+    filteredFlashcards,
     setSelectedCategory,
     markAsKnown,
     resetProgress,

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FlashcardsContext from "../../contexts/FlashcardsContext";
+import { FlashcardsContext } from "../../contexts/FlashcardsContext";
 import { Flashcard } from "../Flashcard/Flashcard";
 
 export function FlashcardGrid() {
