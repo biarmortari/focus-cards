@@ -1,37 +1,46 @@
-import React from "react";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 import initialData from "../data/data.json";
 
-const FlashcardsContext = React.createContext();
+export const FlashcardsContext = createContext();
 
 export function FlashcardsProvider({ children }) {
   const [flashcards, setFlashcards] = useState(initialData.flashcards);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-  function maskAsKnown(cardId) {
+  function markAsKnown(cardId) {
     setFlashcards((prevCards) =>
       prevCards.map((card) =>
-        card.id === cardId ? { ...card, knowCount: card.knowCount + 1 } : card,
+        card.id === cardId
+          ? { ...card, knownCount: Math.min(card.knownCount + 1, 5) }
+          : card,
       ),
     );
   }
 
   function resetProgress(cardId) {
     setFlashcards((prevCards) =>
-      prevCards.map(
-        (card = card.id === cardId ? { ...card, knowCount: 0 } : card),
+      prevCards.map((card) =>
+        card.id === cardId ? { ...card, knownCount: 0 } : card,
       ),
     );
   }
 
   function getCardStatus(card) {
-    if (card.knowCount === 0) return "not_started";
-    if (card.knowCount >= 5) return "mastered";
+    if (card.knownCount === 0) return "not_started";
+    if (card.knownCount >= 5) return "mastered";
     return "in_progress";
   }
 
+  const categories = useMemo(() => {
+    return [...new Set(flashcards.map((card) => card.category))];
+  }, [flashcards]);
+
   const value = {
     flashcards,
-    maskAsKnown,
+    categories,
+    selectedCategory,
+    setSelectedCategory,
+    markAsKnown,
     resetProgress,
     getCardStatus,
   };
@@ -42,5 +51,3 @@ export function FlashcardsProvider({ children }) {
     </FlashcardsContext.Provider>
   );
 }
-
-export default FlashcardsContext;
