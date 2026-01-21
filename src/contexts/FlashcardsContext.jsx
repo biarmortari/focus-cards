@@ -43,6 +43,10 @@ export function FlashcardsProvider({ children }) {
     setFlashcards((prevCards) => [...prevCards, newCard]);
   }
 
+  function deleteFlashcard(id) {
+    setFlashcards((prevCards) => prevCards.filter((card) => card.id !== id));
+  }
+
   const categories = useMemo(() => {
     const uniqueCategories = new Set(flashcards.map((card) => card.category));
 
@@ -66,6 +70,7 @@ export function FlashcardsProvider({ children }) {
     resetProgress,
     getCardStatus,
     addFlashcard,
+    deleteFlashcard,
   };
 
   return (
