@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
 import { FlashcardsContext } from "../../contexts/FlashcardsContext";
 
-export function FlashcardForm() {
+export function FlashcardForm({ initialData = {}, onSubmit }) {
   const [data, setData] = useState({
-    question: "",
-    answer: "",
-    category: "",
+    question: initialData.question || "",
+    answer: initialData.answer || "",
+    category: initialData.category || "",
   });
 
   const { addFlashcard } = useContext(FlashcardsContext);
@@ -17,13 +17,7 @@ export function FlashcardForm() {
       return;
     }
 
-    addFlashcard(data);
-
-    setData({
-      question: "",
-      answer: "",
-      category: "",
-    });
+    onSubmit(data);
   }
 
   function handleChange(event) {
