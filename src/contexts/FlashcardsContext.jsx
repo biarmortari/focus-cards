@@ -47,6 +47,14 @@ export function FlashcardsProvider({ children }) {
     setFlashcards((prevCards) => prevCards.filter((card) => card.id !== id));
   }
 
+  function editFlashcard(id, updatedData) {
+    setFlashcards((prevFlashcards) =>
+      prevFlashcards.map((card) =>
+        card.id === id ? { ...card, ...updatedData } : card,
+      ),
+    );
+  }
+
   const categories = useMemo(() => {
     const uniqueCategories = new Set(flashcards.map((card) => card.category));
 
@@ -71,6 +79,7 @@ export function FlashcardsProvider({ children }) {
     getCardStatus,
     addFlashcard,
     deleteFlashcard,
+    editFlashcard,
   };
 
   return (
