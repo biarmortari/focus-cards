@@ -7,7 +7,6 @@ export function StudyMode() {
   const { filteredFlashcards } = useContext(FlashcardsContext);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // proteção: não há cards para estudar
   if (!filteredFlashcards || filteredFlashcards.length === 0) {
     return (
       <div>

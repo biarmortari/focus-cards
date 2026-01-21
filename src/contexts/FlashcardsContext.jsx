@@ -31,6 +31,18 @@ export function FlashcardsProvider({ children }) {
     return "in_progress";
   }
 
+  function addFlashcard({ question, answer, category }) {
+    const newCard = {
+      id: crypto.randomUUID(),
+      question: question.trim(),
+      answer: answer.trim(),
+      category: category.trim(),
+      knownCount: 0,
+    };
+
+    setFlashcards((prevCards) => [...prevCards, newCard]);
+  }
+
   const categories = useMemo(() => {
     const uniqueCategories = new Set(flashcards.map((card) => card.category));
 
@@ -53,6 +65,7 @@ export function FlashcardsProvider({ children }) {
     markAsKnown,
     resetProgress,
     getCardStatus,
+    addFlashcard,
   };
 
   return (
