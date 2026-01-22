@@ -3,26 +3,19 @@ import { FlashcardsContext } from "../../contexts/FlashcardsContext";
 import { FlashcardAllCards } from "../Flashcard/FlashcardAllCards/FlashcardAllCards";
 
 export function FlashcardGrid() {
-  const { flashcards, selectedCategory } = useContext(FlashcardsContext);
-
-  const filteredFlashcards = flashcards.filter((card) => {
-    if (selectedCategory === "all") {
-      return true;
-    }
-    return card.category === selectedCategory;
-  });
+  const { visibleFlashcards } = useContext(FlashcardsContext);
 
   return (
     <section className="flashcards">
       <ul className="flashcards__list">
-        {filteredFlashcards.map((card) => (
+        {visibleFlashcards.map((card) => (
           <FlashcardAllCards key={card.id} card={card} />
         ))}
       </ul>
 
-      {filteredFlashcards.length === 0 && (
+      {visibleFlashcards.length === 0 && (
         <p className="flashcards__empty">
-          Nenhum flashcard encontrado nesta categoria.
+          No flashcards found with the current filters.
         </p>
       )}
     </section>

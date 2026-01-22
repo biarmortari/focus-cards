@@ -4,10 +4,12 @@ import { FlashcardStudy } from "../../../components/Flashcard/FlashcardStudyMode
 import { FlashcardFilter } from "../../../components/FlashcardFilter/FlashcardFilter";
 
 export function StudyMode() {
-  const { filteredFlashcards } = useContext(FlashcardsContext);
+  const { visibleFlashcards } = useContext(FlashcardsContext);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { hideMastered, setHideMastered } = useContext(FlashcardsContext);
+  const { isShuffled, setIsShuffled } = useContext(FlashcardsContext);
 
-  if (!filteredFlashcards || filteredFlashcards.length === 0) {
+  if (!visibleFlashcards || visibleFlashcards.length === 0) {
     return (
       <div>
         <FlashcardFilter />
@@ -16,11 +18,11 @@ export function StudyMode() {
     );
   }
 
-  const currentCard = filteredFlashcards[currentIndex];
+  const currentCard = visibleFlashcards[currentIndex];
 
   function handleNext() {
     setCurrentIndex((prevIndex) =>
-      prevIndex < filteredFlashcards.length - 1 ? prevIndex + 1 : prevIndex,
+      prevIndex < visibleFlashcards.length - 1 ? prevIndex + 1 : prevIndex,
     );
   }
 
@@ -30,7 +32,15 @@ export function StudyMode() {
 
   return (
     <div className="study-mode">
-      <FlashcardFilter />
+      <div>
+        <FlashcardFilter />
+        <button onClick={() => setHideMastered((prev) => !prev)}>
+          {hideMastered ? "Show mastered" : "Hide mastered"}
+        </button>
+        <button onClick={() => setIsShuffled((prev) => !prev)}>
+          {isShuffled ? "Unshuffle" : "Shuffle"}
+        </button>
+      </div>
 
       <FlashcardStudy key={currentCard.id} card={currentCard} />
 
@@ -40,12 +50,12 @@ export function StudyMode() {
         </button>
 
         <p>
-          Card {currentIndex + 1} of {filteredFlashcards.length}
+          Card {currentIndex + 1} of {visibleFlashcards.length}
         </p>
 
         <button
           onClick={handleNext}
-          disabled={currentIndex === filteredFlashcards.length - 1}
+          disabled={currentIndex === visibleFlashcards.length - 1}
         >
           Next
         </button>

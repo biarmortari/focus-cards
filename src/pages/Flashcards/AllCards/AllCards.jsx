@@ -6,11 +6,21 @@ import { useContext } from "react";
 
 export function AllCards() {
   const { addFlashcard } = useContext(FlashcardsContext);
+  const { hideMastered, setHideMastered } = useContext(FlashcardsContext);
+  const { isShuffled, setIsShuffled } = useContext(FlashcardsContext);
 
   return (
     <section>
       <FlashcardForm onSubmit={addFlashcard} />
-      <FlashcardFilter />
+      <div>
+        <FlashcardFilter />
+        <button onClick={() => setHideMastered((prev) => !prev)}>
+          {hideMastered ? "Show mastered" : "Hide mastered"}
+        </button>
+        <button onClick={() => setIsShuffled((prev) => !prev)}>
+          {isShuffled ? "Unshuffle" : "Shuffle"}
+        </button>
+      </div>
       <FlashcardGrid />
     </section>
   );

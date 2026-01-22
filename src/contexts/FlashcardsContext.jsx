@@ -6,6 +6,8 @@ export const FlashcardsContext = createContext();
 export function FlashcardsProvider({ children }) {
   const [flashcards, setFlashcards] = useState(initialData.flashcards);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [hideMastered, setHideMastered] = useState(false);
+  const [isShuffled, setIsShuffled] = useState(false);
 
   function markAsKnown(cardId) {
     setFlashcards((prevCards) =>
@@ -55,16 +57,32 @@ export function FlashcardsProvider({ children }) {
     );
   }
 
+  function shuffleArray(array) {
+    return [...array].sort(() => Math.random() - 0.5);
+  }
+
   const categories = useMemo(() => {
     const uniqueCategories = new Set(flashcards.map((card) => card.category));
 
     return ["all", ...uniqueCategories];
   }, [flashcards]);
 
-  const filteredFlashcards =
-    selectedCategory === "all"
-      ? flashcards
-      : flashcards.filter((card) => card.category === selectedCategory);
+  const visibleFlashcards = useMemo(() => {
+    let cards =
+      selectedCategory === "all"
+        ? flashcards
+        : flashcards.filter((card) => card.category === selectedCategory);
+
+    if (hideMastered) {
+      cards = cards.filter((card) => card.knownCount < 5);
+    }
+
+    if (isShuffled) {
+      cards = shuffleArray(cards);
+    }
+
+    return cards;
+  }, [flashcards, selectedCategory, hideMastered, isShuffled]);
 
   const value = {
     flashcards,
@@ -72,7 +90,7 @@ export function FlashcardsProvider({ children }) {
     categories,
     selectedCategory,
     setSelectedCategory,
-    filteredFlashcards,
+    visibleFlashcards,
     setSelectedCategory,
     markAsKnown,
     resetProgress,
@@ -80,6 +98,10 @@ export function FlashcardsProvider({ children }) {
     addFlashcard,
     deleteFlashcard,
     editFlashcard,
+    hideMastered,
+    setHideMastered,
+    isShuffled,
+    setIsShuffled,
   };
 
   return (
