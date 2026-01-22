@@ -1,7 +1,22 @@
 .home {
-  background-color: #f7f3f0;
+  background-color: #eed791;
   max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.title_wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.title {
+  color: #2e1401;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #b30648;
 }

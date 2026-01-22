@@ -9,8 +9,8 @@ export function Home() {
         <img src={logo} className="title_logo" />
         <h1 className="title">Focus Cards</h1>
       </div>
-      <h2>
-        Organize seus estudos com flashcards e gerencie seu tempo com Pomodoro
+      <h2 className="subtitle">
+        Organize seus estudos com Flashcards e gerencie seu tempo com Pomodoro
       </h2>
       <div>
         <p>Conselho do dia</p>
