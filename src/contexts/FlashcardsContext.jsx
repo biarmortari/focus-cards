@@ -84,6 +84,20 @@ export function FlashcardsProvider({ children }) {
     return cards;
   }, [flashcards, selectedCategory, hideMastered, isShuffled]);
 
+  const stats = useMemo(() => {
+    const total = flashcards.length;
+
+    const mastered = flashcards.filter((card) => card.knownCount >= 5).length;
+
+    const notStarted = flashcards.filter(
+      (card) => card.knownCount === 0,
+    ).length;
+
+    const inProgress = total - mastered - notStarted;
+
+    return { total, mastered, notStarted, inProgress };
+  }, [flashcards]);
+
   const value = {
     flashcards,
     setFlashcards,
@@ -102,6 +116,7 @@ export function FlashcardsProvider({ children }) {
     setHideMastered,
     isShuffled,
     setIsShuffled,
+    stats,
   };
 
   return (

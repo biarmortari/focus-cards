@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
 import { FlashcardStudy } from "../../../components/Flashcard/FlashcardStudyMode/FlashcardStudyMode";
 import { FlashcardFilter } from "../../../components/FlashcardFilter/FlashcardFilter";
+import { Stats } from "../../../components/Stats/Stats";
 
 export function StudyMode() {
   const { visibleFlashcards } = useContext(FlashcardsContext);
@@ -60,6 +61,7 @@ export function StudyMode() {
           Next
         </button>
       </div>
+      <Stats />
     </div>
   );
 }
