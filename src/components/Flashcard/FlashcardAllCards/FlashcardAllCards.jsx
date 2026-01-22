@@ -1,5 +1,7 @@
 import { Flashcard } from "../Flashcard";
 import { ProgressBar } from "../../ProgressBar/ProgressBar";
+import { Modal } from "../../Modal/Modal";
+import { FlashcardForm } from "../../FlashcardForm/FlashcardForm";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
 import { useContext, useState } from "react";
 
@@ -66,18 +68,17 @@ export function FlashcardAllCards({ card }) {
         </div>
       </Flashcard>
       {isEditOpen && (
-        <Modal onClose={() => setIsEditOpen(false)}>
+        <Modal title="Edit your card" onClose={() => setIsEditOpen(false)}>
           <FlashcardForm initialData={card} onSubmit={handleEdit} />
         </Modal>
       )}
-      {isDeleteOpen && (
-        <Modal onClose={() => setIsDeleteOpen(false)}>
-          <p>Are you sure you want to delete this card?</p>
 
-          <div className="modal__actions">
-            <button onClick={handleDelete}>Yes, delete</button>
-            <button onClick={() => setIsDeleteOpen(false)}>Cancel</button>
-          </div>
+      {isDeleteOpen && (
+        <Modal title="Delete this card?" onClose={() => setIsDeleteOpen(false)}>
+          <p>This action can't be undone</p>
+
+          <button onClick={() => setIsDeleteOpen(false)}>Cancel</button>
+          <button onClick={handleDelete}>Delete Card</button>
         </Modal>
       )}
     </>
