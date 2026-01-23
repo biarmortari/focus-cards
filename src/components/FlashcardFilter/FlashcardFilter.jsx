@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { FlashcardsContext } from "../../contexts/FlashcardsContext";
+import "./FlashcardFilter.css";
 
 export function FlashcardFilter() {
-  const { categories, selectedCategory, setSelectedCategory } =
+  const { flashcards, categories, selectedCategory, setSelectedCategory } =
     useContext(FlashcardsContext);
   const [isOpen, setIsOpen] = useState(false);
 

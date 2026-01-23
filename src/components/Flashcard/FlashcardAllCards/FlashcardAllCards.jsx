@@ -4,6 +4,7 @@ import { Modal } from "../../Modal/Modal";
 import { FlashcardForm } from "../../FlashcardForm/FlashcardForm";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
 import { useContext, useState } from "react";
+import "./FlashcardAllCards.css";
 
 export function FlashcardAllCards({ card }) {
   const { deleteFlashcard, editFlashcard } = useContext(FlashcardsContext);
