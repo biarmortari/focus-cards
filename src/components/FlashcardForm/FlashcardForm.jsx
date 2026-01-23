@@ -1,5 +1,7 @@
 import { useState, useContext } from "react";
 import { FlashcardsContext } from "../../contexts/FlashcardsContext";
+import circle from "../../assets/images/icon-circle-plus.svg";
+import "./FlashcardForm.css";
 
 export function FlashcardForm({ initialData = {}, onSubmit }) {
   const [data, setData] = useState({
@@ -32,7 +34,7 @@ export function FlashcardForm({ initialData = {}, onSubmit }) {
   return (
     <form className="flashcard_form" onSubmit={handleSubmit}>
       <fieldset className="form__fieldset">
-        <p>Question</p>
+        <p className="form__description">Question</p>
         <input
           id="question"
           required
@@ -45,7 +47,7 @@ export function FlashcardForm({ initialData = {}, onSubmit }) {
         />
         <span className="form__input-error"></span>
 
-        <p>Answer</p>
+        <p className="form__description">Answer</p>
         <input
           id="answer"
           required
@@ -54,11 +56,11 @@ export function FlashcardForm({ initialData = {}, onSubmit }) {
           placeholder="e.g., What is the capital of France?"
           value={data.answer}
           onChange={handleChange}
-          className="form__input"
+          className="form__input form__input-answer"
         />
         <span className="form__input-error"></span>
 
-        <p>Category</p>
+        <p className="form__description">Category</p>
         <input
           id="category"
           name="category"
@@ -72,6 +74,7 @@ export function FlashcardForm({ initialData = {}, onSubmit }) {
         <span className="form__input-error"></span>
 
         <button type="submit" name="submit" className="form__button">
+          <img src={circle} />
           Create Card
         </button>
       </fieldset>
