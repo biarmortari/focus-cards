@@ -1,0 +1,55 @@
+.flashcards__wrapper {
+  background-color: #f7f3f0;
+}
+
+.flashcards__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header__button-home {
+  border: none;
+  cursor: pointer;
+  color: #2e1401;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.header__button-home:hover {
+  color: #6d5b4d;
+}
+
+.header__button-mode {
+  display: flex;
+  background-color: white;
+  border: 1px solid #2e1401;
+  border-radius: 50px;
+  padding: 4px;
+  width: fit-content;
+  box-shadow: 0px 2px 0px 0px #2e1401;
+}
+
+.header__button {
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  color: #2e1401;
+}
+
+.header__button.active {
+  background-color: #f1c40f;
+  box-shadow: inset 0 0 0 2px #2e1401;
+}
+
+.header__button:disabled {
+  cursor: default;
+  color: #2e1401;
+}
