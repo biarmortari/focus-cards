@@ -2,13 +2,12 @@ import { useState, useContext } from "react";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
 import { FlashcardStudy } from "../../../components/Flashcard/FlashcardStudyMode/FlashcardStudyMode";
 import { FlashcardFilter } from "../../../components/FlashcardFilter/FlashcardFilter";
+import { FlashcardControls } from "../../../components/FlashcardControls/FlashcardControls";
 import { Stats } from "../../../components/Stats/Stats";
 
 export function StudyMode() {
   const { visibleFlashcards } = useContext(FlashcardsContext);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { hideMastered, setHideMastered } = useContext(FlashcardsContext);
-  const { isShuffled, setIsShuffled } = useContext(FlashcardsContext);
 
   if (!visibleFlashcards || visibleFlashcards.length === 0) {
     return (
@@ -34,13 +33,7 @@ export function StudyMode() {
   return (
     <div className="study-mode">
       <div>
-        <FlashcardFilter />
-        <button onClick={() => setHideMastered((prev) => !prev)}>
-          {hideMastered ? "Show mastered" : "Hide mastered"}
-        </button>
-        <button onClick={() => setIsShuffled((prev) => !prev)}>
-          {isShuffled ? "Unshuffle" : "Shuffle"}
-        </button>
+        <FlashcardControls />
       </div>
 
       <FlashcardStudy key={currentCard.id} card={currentCard} />
