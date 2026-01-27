@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FlashcardsContext } from "../../contexts/FlashcardsContext";
 import { FlashcardAllCards } from "../Flashcard/FlashcardAllCards/FlashcardAllCards";
+import "./FlashcardGrid.css";
 
 export function FlashcardGrid() {
   const { visibleFlashcards } = useContext(FlashcardsContext);
