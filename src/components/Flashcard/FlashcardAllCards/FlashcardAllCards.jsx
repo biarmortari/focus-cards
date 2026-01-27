@@ -27,6 +27,7 @@ export function FlashcardAllCards({ card }) {
     <>
       <Flashcard card={card}>
         <div className="flashcard__content">
+          <h2 className="flashcard-question">{card.question}</h2>
           <p className="flashcard__answer-title">Answer:</p>
           <p className="flashcard__answer">{card.answer}</p>
 

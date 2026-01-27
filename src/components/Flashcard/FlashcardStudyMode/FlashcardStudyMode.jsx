@@ -8,11 +8,11 @@ export function FlashcardStudy({ card }) {
   const { markAsKnown, resetProgress } = useContext(FlashcardsContext);
 
   return (
-    <Flashcard card={card}>
+    <Flashcard card={card} className="flashcard--study">
       <div className="flashcard__header">
         <span className="flashcard__category">{card.category}</span>
       </div>
-
+      <h2 className="study-question">{card.question}</h2>
       <div className="flashcard__content">
         {!showAnswer ? (
           <button onClick={() => setShowAnswer(true)}>Reveal answer</button>

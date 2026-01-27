@@ -1,8 +1,3 @@
-export function Flashcard({ card, children }) {
-  return (
-    <div className="flashcard">
-      <p>{card.question}</p>
-      {children}
-    </div>
-  );
+export function Flashcard({ children, className = "" }) {
+  return <div className={`flashcard ${className}`}>{children}</div>;
 }
