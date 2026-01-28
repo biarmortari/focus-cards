@@ -7,3 +7,11 @@
   list-style: none;
   padding: 1rem 2.5rem;
 }
+
+.flashcards__empty {
+  color: #2e1401;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 1rem 2.5rem;
+}
