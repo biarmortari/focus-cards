@@ -42,6 +42,33 @@
   height: 4rem;
 }
 
+.form__input:hover {
+  box-shadow: 0px 2px 0px 0px #2e1401;
+  cursor: pointer;
+}
+
+.form__input:focus {
+  border-color: #5072c7;
+  outline: none;
+  box-shadow: 0px 2px 0px 0px #5072c7;
+}
+
+.form__input-error {
+  color: #e11966;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form__error-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
 .form__button {
   border: none;
   padding: 10px 24px;
