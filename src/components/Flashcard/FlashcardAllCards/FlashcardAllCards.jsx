@@ -72,7 +72,11 @@ export function FlashcardAllCards({ card }) {
         </div>
       </Flashcard>
       {isEditOpen && (
-        <Modal title="Edit your card" onClose={() => setIsEditOpen(false)}>
+        <Modal
+          title="Edit your card"
+          onClose={() => setIsEditOpen(false)}
+          className="modal--form"
+        >
           <FlashcardForm initialData={card} onSubmit={handleEdit} />
         </Modal>
       )}

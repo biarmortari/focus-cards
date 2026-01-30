@@ -10,6 +10,9 @@ export function FlashcardForm({ initialData = {}, onSubmit }) {
     category: initialData.category || "",
   });
 
+  const isEditing = Boolean(initialData?.id);
+  const buttonLabel = isEditing ? "Save Changes" : "Create Card";
+
   const { addFlashcard } = useContext(FlashcardsContext);
 
   function handleSubmit(event) {
@@ -75,7 +78,7 @@ export function FlashcardForm({ initialData = {}, onSubmit }) {
 
         <button type="submit" name="submit" className="form__button">
           <img src={circle} />
-          Create Card
+          {buttonLabel}
         </button>
       </fieldset>
     </form>

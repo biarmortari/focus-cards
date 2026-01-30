@@ -10,6 +10,20 @@
   background-color: #fff;
 }
 
+.modal__container .form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__container .flashcard_form {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
 .form__description {
   color: #2e1401;
   font-weight: 500;
