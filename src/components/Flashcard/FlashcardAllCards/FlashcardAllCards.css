@@ -103,7 +103,7 @@
 }
 
 .dropdown__item:hover {
-  background-color: #f5f5f5;
+  background-color: #f1c40f;
 }
 
 .dropdown__item:not(:last-child) {
