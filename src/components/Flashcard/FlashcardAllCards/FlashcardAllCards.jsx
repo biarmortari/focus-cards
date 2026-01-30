@@ -40,6 +40,7 @@ export function FlashcardAllCards({ card }) {
 
             <div className="flashcard__menu">
               <button
+                className="flashcard-open__menu"
                 aria-label="Open menu"
                 onClick={() => setIsMenuOpen((prev) => !prev)}
               >
@@ -49,6 +50,7 @@ export function FlashcardAllCards({ card }) {
               {isMenuOpen && (
                 <div className="flashcard__dropdown">
                   <button
+                    className="dropdown__item"
                     onClick={() => {
                       setIsEditOpen(true);
                       setIsMenuOpen(false);
@@ -58,6 +60,7 @@ export function FlashcardAllCards({ card }) {
                   </button>
 
                   <button
+                    className="dropdown__item"
                     onClick={() => {
                       setIsDeleteOpen(true);
                       setIsMenuOpen(false);
@@ -83,10 +86,18 @@ export function FlashcardAllCards({ card }) {
 
       {isDeleteOpen && (
         <Modal title="Delete this card?" onClose={() => setIsDeleteOpen(false)}>
-          <p>This action can't be undone</p>
-
-          <button onClick={() => setIsDeleteOpen(false)}>Cancel</button>
-          <button onClick={handleDelete}>Delete Card</button>
+          <p className="delete-card__text">This action can't be undone</p>
+          <div className="delete-card__buttons">
+            <button
+              className="cancel--button"
+              onClick={() => setIsDeleteOpen(false)}
+            >
+              Cancel
+            </button>
+            <button className="delete--button" onClick={handleDelete}>
+              Delete Card
+            </button>
+          </div>
         </Modal>
       )}
     </>

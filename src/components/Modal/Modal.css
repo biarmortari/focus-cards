@@ -18,7 +18,7 @@
   position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   animation: modalIn 0.3s ease-out;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 16px;
   margin: 0;
 }
