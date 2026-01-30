@@ -8,12 +8,27 @@
   padding: 1rem 2.5rem;
 }
 
+.flashcards__empty-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .flashcards__empty {
   color: #2e1401;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin: 0;
   padding: 1rem 2.5rem;
+}
+
+.flashcards__empty-subtitle {
+  color: #2e1401;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0rem 2.5rem 1rem;
 }
 
 .load-more-btn {

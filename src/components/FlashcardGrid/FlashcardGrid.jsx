@@ -22,9 +22,12 @@ export function FlashcardGrid() {
       </ul>
 
       {visibleFlashcards.length === 0 && (
-        <p className="flashcards__empty">
-          No flashcards found with the current filters.
-        </p>
+        <div className="flashcards__empty-wrapper">
+          <p className="flashcards__empty">No cards yet.</p>
+          <p className="flashcards__empty-subtitle">
+            Add your first card using the form above and it will show up here.
+          </p>
+        </div>
       )}
 
       {visibleCount < visibleFlashcards.length && (
