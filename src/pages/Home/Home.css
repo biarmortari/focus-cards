@@ -1,22 +1,44 @@
-.home {
-  background-color: #eed791;
-  max-width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
+.home-hero h1 {
+  color: #c2185b; /* Rosa escuro/vinho como no seu print */
+  font-size: 2.5rem;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.advice-card {
+  background-color: white;
+  border: 2px solid #2e1401;
+  border-radius: 20px;
   padding: 2rem;
-  font-family: "Poppins", sans-serif;
+  position: relative;
+  box-shadow: 4px 4px 0px 0px #2e1401; /* Sombra sólida característica */
+  margin-bottom: 2rem;
 }
 
-.title_wrapper {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.title {
-  color: #2e1401;
+.advice-tag {
+  position: absolute;
+  top: -15px;
+  background: #f1c40f;
+  border: 2px solid #2e1401;
+  padding: 4px 12px;
+  border-radius: 50px;
   font-weight: bold;
+  font-size: 0.8rem;
 }
 
-.subtitle {
-  color: #b30648;
+/* Botão Principal Estilizado */
+.start-study-btn {
+  background-color: #f1c40f;
+  border: 2px solid #2e1401;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px #2e1401;
+  transition: all 0.2s;
+}
+
+.start-study-btn:active {
+  box-shadow: 0px 0px 0px 0px #2e1401;
+  transform: translate(2px, 2px);
 }
