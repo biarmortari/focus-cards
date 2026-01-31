@@ -26,34 +26,36 @@ export function Home() {
   }, []);
 
   return (
-    <main className="home-hero">
-      <div className="title_wrapper">
-        <img src={logo} className="title_logo" />
-        <h1 className="title">Focus Cards</h1>
+    <main className="home-container">
+      <div className="home-header">
+        <img src={logo} className="home-logo" alt="Focus Cards Logo" />
+        <h1 className="home-brand">Focus Cards</h1>
       </div>
-      <h2 className="subtitle">
-        Organize seus estudos com Flashcards e gerencie seu tempo com Pomodoro
+
+      <h2 className="home-subtitle">
+        Organize your studies with <span className="text-pink">Flashcards</span>{" "}
+        and manage your time with <span className="text-yellow">Pomodoro</span>
       </h2>
+
       <div className="advice-card">
-        <p>Conselho do dia</p>
-        <div className="advice-text">
-          {loading && <p>Loading advice...</p>}
+        <span className="advice-badge">Advice of the day</span>
 
-          {error && <p className="error">{error}</p>}
-
+        <div className="advice-content">
+          {loading && <p className="loading-text">Loading advice...</p>}
+          {error && <p className="error-text">{error}</p>}
           {!loading && !error && (
-            <blockquote className="advice">“{advice}”</blockquote>
+            <blockquote className="advice-quote">“{advice}”</blockquote>
           )}
         </div>
+
         <button onClick={fetchAdvice} className="advice-refresh-btn">
           New advice
         </button>
       </div>
-      <div>
-        <Link to="study">
-          <button className="start-study-btn">Começar a estudar</button>
-        </Link>
-      </div>
+
+      <Link to="study" className="start-link">
+        <button className="start-study-btn">Start studying &#8594;</button>
+      </Link>
     </main>
   );
 }
