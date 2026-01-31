@@ -1,35 +1,77 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
-import { Flashcard } from "../../Flashcard/Flashcard";
 import { ProgressBar } from "../../ProgressBar/ProgressBar";
+import { FlashcardControls } from "../../../components/FlashcardControls/FlashcardControls";
+import { FlipCard } from "../../FlipCard/FlipCard";
+import "./FlashcardStudyMode.css";
+import reset from "../../../assets/images/icon-reset.svg";
+import check from "../../../assets/images/icon-circle-check.svg";
 
-export function FlashcardStudy({ card }) {
-  const [showAnswer, setShowAnswer] = useState(false);
+export function FlashcardStudy({
+  card,
+  onNext,
+  onPrevious,
+  isFirst,
+  isLast,
+  currentIndex,
+  total,
+}) {
+  const [isFlipped, setIsFlipped] = useState(false);
   const { markAsKnown, resetProgress } = useContext(FlashcardsContext);
 
-  return (
-    <Flashcard card={card} className="flashcard--study">
-      <div className="flashcard__header">
-        <span className="flashcard__category">{card.category}</span>
-      </div>
-      <h2 className="study-question">{card.question}</h2>
-      <div className="flashcard__content">
-        {!showAnswer ? (
-          <button onClick={() => setShowAnswer(true)}>Reveal answer</button>
-        ) : (
-          <p className="flashcard__answer">{card.answer}</p>
-        )}
-      </div>
+  useEffect(() => setIsFlipped(false), [card.id]);
 
-      <div className="flashcard__footer">
-        <ProgressBar value={card.knownCount} />
+  return (
+    <div className="study-container">
+      <FlashcardControls />
+
+      <hr className="divider" />
+
+      <div className="study-main">
+        <FlipCard
+          card={card}
+          isFlipped={isFlipped}
+          onReveal={() => setIsFlipped(true)}
+          progress={<ProgressBar value={card.knownCount} />}
+        />
 
         <div className="flashcard__actions">
-          <button onClick={() => markAsKnown(card.id)}>I know this</button>
-
-          <button onClick={() => resetProgress(card.id)}>Reset progress</button>
+          <button
+            onClick={() => markAsKnown(card.id)}
+            className="flashcard__button know-button"
+          >
+            <img src={check} alt="" /> I know this
+          </button>
+          <button
+            onClick={() => resetProgress(card.id)}
+            className="flashcard__button reset-button"
+          >
+            <img src={reset} alt="" /> Reset progress
+          </button>
         </div>
       </div>
-    </Flashcard>
+
+      <hr className="divider" />
+
+      <div className="study-navigation">
+        <button
+          className="study-navigation__button"
+          onClick={onPrevious}
+          disabled={isFirst}
+        >
+          &lt; Previous
+        </button>
+        <p className="study-current-card">
+          Card {currentIndex + 1} of {total}
+        </p>
+        <button
+          className="study-navigation__button"
+          onClick={onNext}
+          disabled={isLast}
+        >
+          Next &gt;
+        </button>
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,47 @@
+.study-container {
+  border: 2px solid #2e1401;
+  border-radius: 20px;
+  margin: auto;
+  background: white;
+  overflow: hidden;
+  margin: 1rem 2.5rem;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #2e1401;
+  margin: 0;
+}
+
+.study-header,
+.study-navigation {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.study-main {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.study-current-card {
+  color: #2e1401;
+  opacity: 0.8;
+}
+
+.study-navigation__button {
+  border: 1px solid #2e1401;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  font-size: 0.8rem;
+  gap: 0.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  color: #2e1401;
+}

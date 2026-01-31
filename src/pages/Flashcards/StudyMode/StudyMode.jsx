@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
 import { FlashcardStudy } from "../../../components/Flashcard/FlashcardStudyMode/FlashcardStudyMode";
 import { FlashcardFilter } from "../../../components/FlashcardFilter/FlashcardFilter";
-import { FlashcardControls } from "../../../components/FlashcardControls/FlashcardControls";
+
 import { Stats } from "../../../components/Stats/Stats";
 
 export function StudyMode() {
@@ -11,49 +11,36 @@ export function StudyMode() {
 
   if (!visibleFlashcards || visibleFlashcards.length === 0) {
     return (
-      <div>
+      <div className="study-mode">
         <FlashcardFilter />
         <p>No flashcards available for study.</p>
       </div>
     );
   }
 
-  const currentCard = visibleFlashcards[currentIndex];
+  const handleNext = () => {
+    if (currentIndex < visibleFlashcards.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
 
-  function handleNext() {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < visibleFlashcards.length - 1 ? prevIndex + 1 : prevIndex,
-    );
-  }
-
-  function handlePrevious() {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
-  }
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
 
   return (
     <div className="study-mode">
-      <div>
-        <FlashcardControls />
-      </div>
-
-      <FlashcardStudy key={currentCard.id} card={currentCard} />
-
-      <div className="study-mode__navigation">
-        <button onClick={handlePrevious} disabled={currentIndex === 0}>
-          Previous
-        </button>
-
-        <p>
-          Card {currentIndex + 1} of {visibleFlashcards.length}
-        </p>
-
-        <button
-          onClick={handleNext}
-          disabled={currentIndex === visibleFlashcards.length - 1}
-        >
-          Next
-        </button>
-      </div>
+      <FlashcardStudy
+        card={visibleFlashcards[currentIndex]}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+        isFirst={currentIndex === 0}
+        isLast={currentIndex === visibleFlashcards.length - 1}
+        currentIndex={currentIndex}
+        total={visibleFlashcards.length}
+      />
       <Stats />
     </div>
   );

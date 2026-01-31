@@ -11,10 +11,7 @@ export function Flashcards() {
     <div className="flashcards__wrapper">
       <header className="flashcards__header">
         <Link to="/">
-          <button className="header__button-home">
-            {" "}
-            &#8592; Voltar para a home
-          </button>
+          <button className="header__button-home"> &#8592; Back to Home</button>
         </Link>
         <div className="header__button-mode">
           <button
