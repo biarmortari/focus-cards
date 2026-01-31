@@ -1,13 +1,13 @@
 .flashcards__wrapper {
   font-family: "Poppins", sans-serif;
   background-color: #f7f3f0;
+  padding: 1rem 2.5rem;
 }
 
 .flashcards__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2.5rem;
 }
 
 .header__button-home {
