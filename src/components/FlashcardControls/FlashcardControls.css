@@ -2,7 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2.5rem;
+  padding: 1rem;
+}
+
+.control-buttons-left {
+  display: flex;
+  gap: 1rem;
 }
 
 .control-button--hide-mastered {
@@ -12,7 +17,6 @@
   cursor: pointer;
   color: #2e1401;
   font-weight: 500;
-  padding-right: 60%;
 }
 
 .control-button__input {

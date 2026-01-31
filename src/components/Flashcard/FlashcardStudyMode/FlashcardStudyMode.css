@@ -1,10 +1,10 @@
 .study-container {
   border: 2px solid #2e1401;
   border-radius: 20px;
-  margin: auto;
+  margin: 0;
   background: white;
   overflow: hidden;
-  margin: 1rem 2.5rem;
+  width: 100%;
 }
 
 .divider {

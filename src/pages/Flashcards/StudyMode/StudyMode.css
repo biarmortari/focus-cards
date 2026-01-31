@@ -1,1 +1,7 @@
-
+.study-mode {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2.5rem;
+}

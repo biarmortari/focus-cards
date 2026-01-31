@@ -1,7 +1,6 @@
 .flip-card {
   perspective: 1000px;
   height: 60vh;
-  margin: 20px auto;
   width: 100%;
 }
 
@@ -44,12 +43,12 @@
   transform: rotateY(180deg);
 }
 
-.flashcard__question {
+.flashcard-study__question {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.flashcard__answer {
+.flashcard-study__answer {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;

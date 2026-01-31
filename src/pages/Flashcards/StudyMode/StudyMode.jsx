@@ -5,6 +5,8 @@ import { FlashcardFilter } from "../../../components/FlashcardFilter/FlashcardFi
 
 import { Stats } from "../../../components/Stats/Stats";
 
+import "./StudyMode.css";
+
 export function StudyMode() {
   const { visibleFlashcards } = useContext(FlashcardsContext);
   const [currentIndex, setCurrentIndex] = useState(0);

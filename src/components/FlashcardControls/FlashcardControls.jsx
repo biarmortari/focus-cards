@@ -9,16 +9,18 @@ export function FlashcardControls() {
   const { isShuffled, setIsShuffled } = useContext(FlashcardsContext);
   return (
     <div className="control-buttons__wrapper">
-      <FlashcardFilter />
-      <label className="control-button control-button--hide-mastered">
-        <input
-          className="control-button__input"
-          type="checkbox"
-          checked={hideMastered}
-          onChange={() => setHideMastered((prev) => !prev)}
-        />
-        Hide Mastered
-      </label>
+      <div className="control-buttons-left">
+        <FlashcardFilter />
+        <label className="control-button control-button--hide-mastered">
+          <input
+            className="control-button__input"
+            type="checkbox"
+            checked={hideMastered}
+            onChange={() => setHideMastered((prev) => !prev)}
+          />
+          Hide Mastered
+        </label>
+      </div>
 
       <button
         className="control-buttons control-button--shuffle"

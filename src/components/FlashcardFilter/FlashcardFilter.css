@@ -15,7 +15,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0px 4px 0px 0px #2b1d0e;
   transition: all 0.1s active;
   outline: none;
 }
