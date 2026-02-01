@@ -38,7 +38,7 @@ export function Home() {
       </h2>
 
       <div className="advice-card">
-        <span className="advice-badge">Advice of the day</span>
+        <span className="advice-badge">Daily Advice</span>
 
         <div className="advice-content">
           {loading && <p className="loading-text">Loading advice...</p>}

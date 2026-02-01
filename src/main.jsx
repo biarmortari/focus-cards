@@ -7,13 +7,16 @@ import "./index.css";
 import App from "./App";
 
 import { FlashcardsProvider } from "../src/contexts/FlashcardsContext";
+import { PomodoroContext, PomodoroProvider } from "./contexts/PomodoroContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <FlashcardsProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </FlashcardsProvider>
+    <PomodoroProvider>
+      <FlashcardsProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </FlashcardsProvider>
+    </PomodoroProvider>
   </StrictMode>,
 );
