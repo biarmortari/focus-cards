@@ -1,0 +1,8 @@
+.pomodoro {
+  text-align: center;
+}
+
+.pomodoro__time {
+  font-size: 3rem;
+  font-weight: bold;
+}
