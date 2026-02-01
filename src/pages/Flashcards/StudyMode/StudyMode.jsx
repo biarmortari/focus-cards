@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { FlashcardsContext } from "../../../contexts/FlashcardsContext";
 import { FlashcardStudy } from "../../../components/Flashcard/FlashcardStudyMode/FlashcardStudyMode";
 import { FlashcardFilter } from "../../../components/FlashcardFilter/FlashcardFilter";
+import { PomodoroSidebar } from "../../../components/PomodoroWidget/PomodoroSideBar/PomodoroSideBar";
 
 import { Stats } from "../../../components/Stats/Stats";
 
@@ -34,6 +35,7 @@ export function StudyMode() {
 
   return (
     <div className="study-mode">
+      <PomodoroSidebar />
       <FlashcardStudy
         card={visibleFlashcards[currentIndex]}
         onNext={handleNext}

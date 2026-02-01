@@ -1,4 +1,4 @@
-import { usePomodoro } from "../../../../contexts/PomodoroContext";
+import { usePomodoro } from "../../../contexts/PomodoroContext";
 import "./PomodoroTimer.css";
 
 export function PomodoroTimer() {

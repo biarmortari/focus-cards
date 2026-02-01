@@ -1,4 +1,4 @@
-import { usePomodoro } from "../../contexts/PomodoroContext";
+import { usePomodoro } from "../../../contexts/PomodoroContext";
 
 export function PomodoroControls() {
   const { isRunning, start, pause, reset } = usePomodoro();
