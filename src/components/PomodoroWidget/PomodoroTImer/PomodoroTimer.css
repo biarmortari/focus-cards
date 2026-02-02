@@ -1,5 +1,10 @@
 .pomodoro {
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #2e1401;
+}
+
+.pomodoro__mode {
 }
 
 .pomodoro__time {
