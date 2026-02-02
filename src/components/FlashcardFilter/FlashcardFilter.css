@@ -71,3 +71,11 @@
   background-color: #f1c40f;
   font-weight: 800;
 }
+
+@media screen and (max-width: 480px) {
+  .filter__button_main {
+    padding: 4px 14px;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+}

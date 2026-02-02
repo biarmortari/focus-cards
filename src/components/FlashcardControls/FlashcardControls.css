@@ -1,7 +1,7 @@
 .control-buttons__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1rem;
 }
 
@@ -60,4 +60,33 @@
 
 .control-button--shuffle:hover {
   background-color: #f1c40f;
+}
+
+@media screen and (max-width: 600px) {
+  .control-buttons-left {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .control-buttons-left {
+    flex-direction: column;
+  }
+
+  .control-button--shuffle {
+    padding: 3px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .control-button--shuffle {
+    padding: 2px;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .control-buttons__wrapper {
+    flex-direction: column;
+  }
 }

@@ -45,3 +45,21 @@
 .load-more-btn:hover {
   background-color: #f1c40f;
 }
+
+@media screen and (max-width: 980px) {
+  .flashcards__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .flashcards__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .flashcards__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
