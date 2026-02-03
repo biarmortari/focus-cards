@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRandomAdvice } from "../../services/adviceApi";
+import { getRandomAdvice } from "../../utils/adviceApi";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import logo from "../../assets/images/logo-small.svg";
