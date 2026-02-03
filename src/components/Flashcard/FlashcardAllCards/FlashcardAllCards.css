@@ -18,7 +18,7 @@
   flex-direction: column;
 }
 
-.flashcard-question {
+.flashcard__question {
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0;
@@ -122,7 +122,7 @@
   gap: 0.7rem;
 }
 
-.cancel--button {
+.cancel__button {
   border: none;
   padding: 8px 20px;
   border-radius: 40px;
@@ -136,7 +136,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.delete--button {
+.delete__button {
   border: none;
   padding: 8px 20px;
   border-radius: 40px;

@@ -22,12 +22,12 @@ export function FlashcardStudy({
   useEffect(() => setIsFlipped(false), [card.id]);
 
   return (
-    <div className="study-container">
+    <div className="study__container">
       <FlashcardControls />
 
       <hr className="divider" />
 
-      <div className="study-main">
+      <div className="study__main">
         <FlipCard
           card={card}
           isFlipped={isFlipped}

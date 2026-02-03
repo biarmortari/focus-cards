@@ -1,4 +1,4 @@
-.study-container {
+.study__container {
   border: 2px solid #2e1401;
   border-radius: 20px;
   margin: 0;
@@ -21,7 +21,7 @@
   align-items: center;
 }
 
-.study-main {
+.study__main {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;

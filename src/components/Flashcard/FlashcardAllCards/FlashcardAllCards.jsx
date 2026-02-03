@@ -27,7 +27,7 @@ export function FlashcardAllCards({ card }) {
     <>
       <Flashcard card={card}>
         <div className="flashcard__content">
-          <h2 className="flashcard-question">{card.question}</h2>
+          <h2 className="flashcard__question">{card.question}</h2>
           <div className="flashcard__answer-wrapper">
             <p className="flashcard__answer-title">Answer:</p>
             <p className="flashcard__answer">{card.answer}</p>
@@ -78,7 +78,7 @@ export function FlashcardAllCards({ card }) {
         <Modal
           title="Edit your card"
           onClose={() => setIsEditOpen(false)}
-          className="modal--form"
+          className="modal__form"
         >
           <FlashcardForm initialData={card} onSubmit={handleEdit} />
         </Modal>
@@ -89,12 +89,12 @@ export function FlashcardAllCards({ card }) {
           <p className="delete-card__text">This action can't be undone</p>
           <div className="delete-card__buttons">
             <button
-              className="cancel--button"
+              className="cancel__button"
               onClick={() => setIsDeleteOpen(false)}
             >
               Cancel
             </button>
-            <button className="delete--button" onClick={handleDelete}>
+            <button className="delete__button" onClick={handleDelete}>
               Delete Card
             </button>
           </div>
