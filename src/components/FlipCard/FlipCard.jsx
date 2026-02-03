@@ -8,7 +8,7 @@ export function FlipCard({ isFlipped, card, onReveal, progress }) {
           <span className="card-category">{card.category}</span>
           <p className="flashcard-study__question">{card.question}</p>
           <button className="reveal-btn" onClick={onReveal}>
-            Reveal answer
+            Click to reveal answer
           </button>
           <div className="progress-container">{progress}</div>
         </div>

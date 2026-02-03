@@ -57,3 +57,30 @@
   border-left: 2px solid #2e1401;
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .stats-wrapper {
+    padding: 1rem;
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .stats-wrapper {
+    width: 95%;
+  }
+
+  .stats-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .stats-wrapper {
+    width: 90%;
+  }
+
+  .stats-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

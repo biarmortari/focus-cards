@@ -3,5 +3,13 @@
   align-items: flex-start;
   justify-content: center;
   gap: 2rem;
-  padding: 2.5rem;
+  padding: 2.5rem 0 2.5rem 0;
+}
+
+@media screen and (max-width: 880px) {
+  .study-mode {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 0 2.5rem 0;
+  }
 }

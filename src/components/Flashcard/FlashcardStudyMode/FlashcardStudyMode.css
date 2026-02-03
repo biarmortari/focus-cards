@@ -45,3 +45,46 @@
   cursor: pointer;
   color: #2e1401;
 }
+
+.flashcard__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.flashcard__button {
+  border: 1px solid #2e1401;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  box-shadow: 1px 1.5px 0px 0px #2e1401;
+  font-size: 0.8rem;
+  gap: 0.5rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.know-button {
+  background-color: #f1c40f;
+}
+
+.reset-button {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 510px) {
+  .flashcard__actions {
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .flashcard__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .study-navigation__button span {
+    display: none;
+  }
+}

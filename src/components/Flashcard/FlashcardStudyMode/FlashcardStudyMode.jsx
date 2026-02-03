@@ -59,7 +59,7 @@ export function FlashcardStudy({
           onClick={onPrevious}
           disabled={isFirst}
         >
-          &lt; Previous
+          &lt; <span>Previous</span>
         </button>
         <p className="study-current-card">
           Card {currentIndex + 1} of {total}
@@ -69,7 +69,7 @@ export function FlashcardStudy({
           onClick={onNext}
           disabled={isLast}
         >
-          Next &gt;
+          <span>Next</span> &gt;
         </button>
       </div>
     </div>
