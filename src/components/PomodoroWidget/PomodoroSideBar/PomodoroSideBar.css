@@ -1,0 +1,76 @@
+.pomodoro-sidebar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 2px solid #2e1401;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  box-shadow: -4px 4px 0px 0px #2e1401;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+}
+
+.pomodoro-sidebar.closed {
+  transform: translateY(-50%) translateX(calc(100% - 60px));
+}
+
+.pomodoro-sidebar__toggle {
+  width: 60px;
+  height: 60px;
+  background-color: #f1c40f;
+  border: none;
+  border-right: 2px solid #2e1401;
+  border-radius: 18px 0 0 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e1401;
+}
+
+.is-active {
+  width: 40px;
+  height: 100%;
+  border-radius: 18px;
+  background-color: #f1c40f;
+  box-shadow: -4px 4px 0px 0px #2e1401;
+}
+
+.apple-toggle-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.pomodoro-sidebar__content {
+  padding: 1.5rem;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pomodoro-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c2185b;
+  margin: 0;
+}
+
+@media screen and (max-width: 510px) {
+  .pomodoro-sidebar {
+    right: -15px;
+  }
+
+  .pomodoro-sidebar__toggle {
+    width: 50px;
+    height: 50px;
+  }
+}
