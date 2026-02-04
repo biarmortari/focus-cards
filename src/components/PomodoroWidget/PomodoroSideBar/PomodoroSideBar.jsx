@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PomodoroTimer } from "../PomodoroTimer/PomodoroTimer";
 import { PomodoroControls } from "../PomodoroControls/PomodoroControls";
 import appleIcon from "../../../assets/images/apple.svg";
-import "./PomodoroSidebar.css";
+import "./PomodoroSideBar.css";
 
 export function PomodoroSidebar() {
   const [isOpen, setIsOpen] = useState(false);
