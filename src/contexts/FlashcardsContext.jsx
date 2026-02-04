@@ -105,7 +105,6 @@ export function FlashcardsProvider({ children }) {
     selectedCategory,
     setSelectedCategory,
     visibleFlashcards,
-    setSelectedCategory,
     markAsKnown,
     resetProgress,
     getCardStatus,
