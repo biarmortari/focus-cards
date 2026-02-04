@@ -1,0 +1,98 @@
+.control-buttons__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.control-buttons-left {
+  display: flex;
+  gap: 1rem;
+}
+
+.control-button--hide-mastered {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #2e1401;
+  font-weight: 500;
+}
+
+.control-button__input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.control-button__input:checked {
+  background-color: #f1c40f;
+  border-color: #2e1401;
+}
+
+.control-button__input:checked::after {
+  content: "✔";
+  color: #2e1401;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.control-button--shuffle {
+  display: flex;
+  background-color: white;
+  border: 1px solid #2e1401;
+  border-radius: 50px;
+  padding: 4px;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #2e1401;
+  gap: 0.3rem;
+}
+
+.control-button--shuffle:hover {
+  background-color: #f1c40f;
+}
+
+@media screen and (max-width: 600px) {
+  .control-buttons-left {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .control-buttons-left {
+    flex-direction: column;
+  }
+
+  .control-button--shuffle {
+    padding: 3px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .control-button--shuffle {
+    padding: 2px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .control-button--shuffle {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+
+  .control-button--hide-mastered {
+    font-size: 0.9rem;
+  }
+}
