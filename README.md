@@ -1,5 +1,7 @@
 # FocusCards
 
+[**🔗 Acesse o site ao vivo**](https://focus-cards-three.vercel.app)
+
 FocusCards is a frontend web application designed to support focused studying through flashcards and time management.
 
 The app combines active recall (flashcards) with Pomodoro sessions, allowing users to study more efficiently without switching between tools.
