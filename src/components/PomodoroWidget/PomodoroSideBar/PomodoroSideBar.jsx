@@ -4,7 +4,7 @@ import { PomodoroControls } from "../PomodoroControls/PomodoroControls";
 import appleIcon from "../../../assets/images/apple.svg";
 import "./PomodoroSideBar.css";
 
-export function PomodoroSidebar() {
+export function PomodoroSideBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
